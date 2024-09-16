@@ -25,15 +25,37 @@
 - pstr -- Length-prefixed (Pascal string)
 - prob1. Multiples of 3 or 5 
 ### Язык программирования - ASM
-'''
-<programm> ::= {line}
+```
+<program>    ::= <instruction> | <instruction> <program>
 
-line ::= label [comment] "\n"
-    | instruction [comment] "\n"
-    | [comment]
+<instruction> ::= <label> ":" <operation> | <operation>
 
-instuction ::= 
+<operation> ::= <data_op> | <memory_op> | <io_op> | <control_op>
 
-operation ::= ""
+<data_op> ::= "ADD" <reg> "," <reg> "," <reg>
+            | "SUB" <reg> "," <reg> "," <reg>
+            | "MUL" <reg> "," <reg> "," <reg>
+            | "DIV" <reg> "," <reg> "," <reg>
+            | "MOV" <reg> "," <reg>
+
+<memomry_op> ::= "LOAD" <reg> "," <mem_addr>
+               | "STORE" <reg> "," <mem_addr>
+
+<io_op> ::= "IN" <reg> "," "port_addr"
+          | "OUT" <port_addr> "," <reg>    
+
+<control_op> ::= "JMP" <label>
+               | "JZ" <reg> "," <label>
+               | "HALT"
+
+<label> ::= <identifier>
+<reg> ::= "R" <digit>
+<mem_addr> ::= "[" <number> "}"
+<port_addr> ::= "[" <number> "]"
+<identifier> ::= <letter> {<letter> | <digit>}
+<number> ::= <digit> {digit}
+<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+<letter> ::= "a" | "b" | ... | "z"| "A" | "B" | ... | "Z"
+```
     
     
