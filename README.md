@@ -26,36 +26,38 @@
 - prob1. Multiples of 3 or 5 
 ### Язык программирования - ASM
 ```
-<program>    ::= <instruction> | <instruction> <program>
+<program>      ::= <instruction> | <instruction> <program>
 
-<instruction> ::= <label> ":" <operation> | <operation>
+<instruction>  ::= <label> ":" <operation> | <operation>
 
-<operation> ::= <data_op> | <memory_op> | <io_op> | <control_op>
+<operation>    ::= <data_op> | <memory_op> | <io_op> | <control_op>
 
-<data_op> ::= "ADD" <reg> "," <reg> "," <reg>
-            | "SUB" <reg> "," <reg> "," <reg>
-            | "MUL" <reg> "," <reg> "," <reg>
-            | "DIV" <reg> "," <reg> "," <reg>
-            | "MOV" <reg> "," <reg>
+<data_op>      ::= "ADD" <reg> "," <reg> "," <reg>
+                 | "SUB" <reg> "," <reg> "," <reg>
+                 | "MUL" <reg> "," <reg> "," <reg>
+                 | "DIV" <reg> "," <reg> "," <reg>
+                 | "MOV" <reg> "," <reg>
+                 | "INC" <reg>
+                 | "DEC" <reg>
 
-<memomry_op> ::= "LOAD" <reg> "," <mem_addr>
-               | "STORE" <reg> "," <mem_addr>
+<memomry_op>   ::= "LOAD" <reg> "," <mem_addr>
+                 | "STORE" <reg> "," <mem_addr>
 
-<io_op> ::= "IN" <reg> "," "port_addr"
-          | "OUT" <port_addr> "," <reg>    
+<io_op>        ::= "IN" <reg> "," "port_addr"
+                 | "OUT" <port_addr> "," <reg>    
 
-<control_op> ::= "JMP" <label>
-               | "JZ" <reg> "," <label>
-               | "HALT"
+<control_op>   ::= "JMP" <label>
+                 | "JZ" <reg> "," <label>
+                 | "HALT"
 
-<label> ::= <identifier>
-<reg> ::= "R" <digit>
-<mem_addr> ::= "[" <number> "}"
-<port_addr> ::= "[" <number> "]"
-<identifier> ::= <letter> {<letter> | <digit>}
-<number> ::= <digit> {digit}
-<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
-<letter> ::= "a" | "b" | ... | "z"| "A" | "B" | ... | "Z"
+<label>        ::= <identifier>
+<reg>          ::= "R" <digit>
+<mem_addr>     ::= "[" <number> "}"
+<port_addr>    ::= "[" <number> "]"
+<identifier>   ::= <letter> {<letter> | <digit>}
+<number>       ::= <digit> {digit}
+<digit>        ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+<letter>       ::= "a" | "b" | ... | "z"| "A" | "B" | ... | "Z"
 ```
     
     
